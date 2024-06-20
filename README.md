@@ -32,11 +32,11 @@ This dataset contains information on two species of Sea Rocket Cakile maritima (
 [RStudio](#Rstudio) - To View, manipulate and visualize the data
 
 ## R Data Analysis
-## Loading the dataset
+# Loading the dataset
 ```r
 flowers<- read.csv("C:\\Users\\ADMIN\\Desktop\\pollinators\\pollinators.csv")
 ```
-## Loading necessary packages
+# Loading necessary packages
 ```r
 library(dplyr)
 library(ggplot2)
@@ -49,7 +49,7 @@ summary(flowers)
 ```r
 sum(is.na(flowers))
 ```
-## Box plot
+# Box plot
 ```r
 Box_Plot<- ggplot(flowers, aes(x=Species, y=NumberofPollinator, fill = Species)) +geom_boxplot() +
   labs(title = 'Boxplot of Number of Pollinators by Species',
@@ -58,7 +58,7 @@ Box_Plot<- ggplot(flowers, aes(x=Species, y=NumberofPollinator, fill = Species))
   theme_minimal()
 print(Box_Plot)
 ```
-## scatter plot
+# scatter plot
 ```r
 Scatter_Plot<- ggplot(flowers, aes(x=NumberofPollinator, y=NumberofFlowers, colour = Species)) +geom_point() +
   labs(title = 'Scatter Plot of Number of Flowers vs Number of Pollinators',
@@ -67,12 +67,12 @@ Scatter_Plot<- ggplot(flowers, aes(x=NumberofPollinator, y=NumberofFlowers, colo
   theme_minimal()
 print(Scatter_Plot)
 ```
-## Fitting a linear regression line
+# Fitting a linear regression line
 ```r
 model <- lm(NumberofPollinator ~ NumberofFlowers, data = flowers)
 print(model)
 ```
-## Adding the fitted line to the scatter plot
+# Adding the fitted line to the scatter plot
 ```r
 Scatter_Plot <- Scatter_Plot +
   geom_smooth(method = "lm", se = FALSE, color = "black") +
@@ -80,18 +80,18 @@ Scatter_Plot <- Scatter_Plot +
 
 print(Scatter_Plot)
 ```
-## Calculate correlation coefficients
+# Calculate correlation coefficients
 ```r
 correlation_coef <- cor(flowers$NumberofFlowers, flowers$NumberofPollinator)
 print(correlation_coef)
 model <- lm(NumberofPollinator ~ NumberofFlowers * Species, data = flowers)
 summary(model)
 ```
-## Load necessary libraries
+# Load necessary libraries
 ```r
 library(stats)
 ```
-## Perform one-way ANOVA
+# Perform one-way ANOVA
 ```r
 anova_result <- aov(NumberofFlowers ~ Species, data = flowers)
 summary(anova_result)
