@@ -26,6 +26,24 @@ In this problem, I will analyze the data on the effect of a pesticide on aphid m
 [RStudio](#Rstudio) - To View, manipulate and visualize the data
 
 ## R Data Analysis
+## Loading the dataset
+```r
+flowers<- read.csv("C:\\Users\\ADMIN\\Desktop\\pollinators\\pollinators.csv")
+```
+## Loading necessary packages
+```r
+library(dplyr)
+library(ggplot2)
+```
+# Data checks
+```r
+summary(flowers)
+```
+# Checking for missing values, duplicates, and outliers
+```r
+sum(is.na(flowers))
+```
+
 
 
 
