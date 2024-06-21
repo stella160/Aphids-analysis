@@ -32,7 +32,7 @@ This dataset contains information on two species of Sea Rocket Cakile maritima (
 [RStudio](#Rstudio) - To View, manipulate and visualize the data
 
 ## R Data Analysis
-# Loading the dataset
+## Loading the dataset
 ```r
 flowers<- read.csv("C:\\Users\\ADMIN\\Desktop\\pollinators\\pollinators.csv")
 ```
